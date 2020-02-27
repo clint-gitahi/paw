@@ -13,14 +13,32 @@ class Main extends Component {
               <div className="wrap">
                 <div className="card-shadow"></div>
                 <div className="card" style={divStyle}>
-                  <div className="card-front">
+                  <a className="card-front">
+                    <div className="card-title">"Jina ya paka"</div>
+                    <div className="card-subtitle">"Jina"</div>
                     <div className="card-shine"></div>
-                  </div>
+                  </a>
                 </div>
 
-                <div className="row justify-content-center">
-                  <p>first button</p>
-                  <p>first button</p>
+                <div className="row justify-content-center" id="actionbtns">
+                  <button type="button">
+                    <img src="images/rewind.png" alt="rewind" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => console.log('disliking the image')}
+                  >
+                    <img src="images/dislike.png" alt="dislike" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => console.log('liking the image')}
+                  >
+                    <img src="images/like.png" alt="like" />
+                  </button>
+                  <button type="button">
+                    <img src="images/superlike.png" alt="superlike" />
+                  </button>
                 </div>
               </div>
             </div>

@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import SideBar from './containers/sidebar';
+import Main from './containers/main';
+import './css/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    console.log('it mounted');
+  }
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row no-gutter">
+          <div className="d-none d-md-flex col-md-3 col-lg-3 bg-light">
+            <SideBar />
+          </div>
+
+          <div className="col-md-9 col-lg-9">
+            <Main />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

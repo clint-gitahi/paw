@@ -6,17 +6,37 @@ class Main extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
-
-    // this.onSwipeLeft = this.onSwipeLeft.bind(this);
-    // this.onSwipeRight = this.onSwipeRight.bind(this);
+    this.state = {
+      liked: [],
+      disliked: []
+    };
   }
   onSwipeLeft(cat) {
-    console.log(cat);
+    const dislikedObj = {
+      id: cat.id,
+      url: cat.url
+    };
+
+    this.setState({
+      disliked: [...this.state.disliked, dislikedObj]
+    });
+
+    const json = JSON.stringify(this.state.disliked);
+    localStorage.setItem('disliked', json);
   }
 
   onSwipeRight(cat) {
-    console.log('we have swiped right', cat);
+    const likedObj = {
+      id: cat.id,
+      url: cat.url
+    };
+
+    this.setState({
+      liked: [...this.state.liked, likedObj]
+    });
+
+    const json = JSON.stringify(this.state.liked);
+    localStorage.setItem('liked', json);
   }
   renderCards() {
     const cardStyle = {
@@ -52,6 +72,7 @@ class Main extends Component {
     });
   }
   render() {
+    console.log('STATE', this.state);
     return (
       <>
         <CardWrapper>{this.renderCards()}</CardWrapper>

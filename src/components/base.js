@@ -36,7 +36,7 @@ class App extends Component {
                 <h2>Cat Tinder</h2>
               </div>
 
-              <Tabs
+              {/* <Tabs
                 id="controlled-tab-example"
                 activeKey={this.state.key}
                 onSelect={k => this.setState({ key: k })}
@@ -47,7 +47,7 @@ class App extends Component {
                 <Tab eventKey="dislikes" title="Dislikes">
                   <Dislikes />
                 </Tab>
-              </Tabs>
+              </Tabs> */}
             </div>
           </div>
 
